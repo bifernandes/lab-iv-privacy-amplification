@@ -1,0 +1,24 @@
+WIDTH=23;
+DEPTH=16;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+    00 : 000000;
+    01 : 7FFFFF;
+    02 : 000101;
+    03 : 5555AA;
+    04 : 6BAAC5;
+    05 : 424814;
+    06 : 67A9F8;
+    07 : 7A029B;
+    08 : 37EBB7;
+    09 : 482647;
+    0A : 184647;
+    0B : 259F80;
+    0C : 19489E;
+    0D : 548725;
+    0E : 19C7F1;
+    0F : 6F25B5;
+END;

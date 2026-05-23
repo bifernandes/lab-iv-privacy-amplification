@@ -26,3 +26,9 @@ hc_output/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# Claude
+.claude/
+.specify/*
+!.specify/memory/
+!.specify/memory/constitution.md

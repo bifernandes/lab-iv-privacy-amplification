@@ -1,0 +1,10 @@
+# Quartus IP File — gerado manualmente (equivalente ao produzido pelo MegaWizard)
+# Referencia o modulo dual_port_ram implementado via altsyncram.
+#
+# Para adicionar ao projeto Quartus (.qsf):
+#   set_global_assignment -name QIP_FILE dual_port_ram/dual_port_ram.qip
+#
+# O Quartus tambem precisa da biblioteca altera_mf no SEARCH_PATH (ja incluida
+# por padrao nos projetos Cyclone IV E criados pelo Quartus Prime Lite 18.1).
+
+set_global_assignment -name VERILOG_FILE [file join [file dirname [info script]] dual_port_ram.v]
