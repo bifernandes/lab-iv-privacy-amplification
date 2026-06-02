@@ -1,28 +1,48 @@
-# Pastas de compilação e banco de dados
+# Quartus Prime Lite 18.1 - Verilog
+# Compiled/output databases
 db/
 incremental_db/
-output_files/
 simulation/
+timing/
 greybox_tmp/
-hc_output/
 
-# Arquivos de log e relatórios
+# Generated programming files
+*.sof
+*.pof
+*.jic
+*.rbf
+*.svf
+
+# Reports and generated outputs
 *.rpt
 *.summary
-*.txt
 *.smsg
-*.jdi
 *.pin
 *.done
 *.qws
+*.qdf
+
+# Netlists and intermediate files
+*.vo
+*.vho
+*.vqm
+*.cmp
+*.eqn
+*.edf
+
+# Backup files
 *.bak
+*.orig
+*.rej
 
-# Arquivos gerados por IPs
-*.v.bak
-*.sv.bak
+# Log files
+*.log
 
-# Python
-.venv/
-__pycache__/
-*.pyc
-.pytest_cache/
+# Temporary/editor files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
