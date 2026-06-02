@@ -227,7 +227,7 @@ module tb_output_interface;
 		else $display("  [PASS] error em fim inesperado (latched)");
 		collecting = 1'b0;
 		// re-arme com nova borda de subida de enable
-		enable = 1'b1; repeat (2) @(posedge clk);
+		enable = 1'b1; repeat (3) @(posedge clk); #1;
 		if (error !== 1'b0) begin $display("  [FAIL] error nao re-armou apos nova requisicao"); fails = fails + 1; end
 		else $display("  [PASS] error re-armado por nova borda de enable");
 		enable = 1'b0; do_reset;

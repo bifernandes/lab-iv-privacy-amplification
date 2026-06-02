@@ -101,8 +101,8 @@ module OutputInterface #(
 	wire do_issue   = (state == ST_SEND) & (current_addr < L) & can_issue;
 	// Pop da FIFO para o registrador de saida
 	wire pop        = out_free & (fifo_count != 0);
-	// Nova requisicao (borda de subida de enable): re-arma done/error
-	wire enable_rise = enable & ~enable_d;
+	// Obs.: a deteccao de borda de subida de 'enable' (re-arme) e feita INLINE no bloco
+	// sincrono via (enable & ~enable_d), lendo o reg enable_d com seu valor pre-borda.
 
 	// Tarefa de zeragem dos fragmentos da chave (RNF-08)
 	// (implementada inline; reset e estados finais limpam buffer e saida)
@@ -313,7 +313,7 @@ module OutputInterface #(
 					// Re-arme: 'error' fica latched ate uma NOVA requisicao (borda de
 					// subida de enable). Necessario porque o "fim inesperado" e disparado
 					// justamente por enable baixar -- nao se pode limpar com ~enable.
-					if (enable_rise)
+					if (enable & ~enable_d)
 					begin
 						error <= 1'b0;
 						done  <= 1'b0;
